@@ -6,7 +6,7 @@
   "python.envFile": "${workspaceFolder}/.env",
   "jupyter.notebookFileRoot": "${workspaceFolder}",
   "[python]": {
-    "editor.defaultFormatter": "charliermarshal.ruff",
+    "editor.defaultFormatter": "charliermarsh.ruff",
     "editor.formatOnSave": true
   }
 }
