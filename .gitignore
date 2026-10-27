@@ -1,0 +1,24 @@
+# Ambiente e segredos
+.env
+.venv/
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+
+# Dados (brutos e processados ficam fora do git)
+data/raw/*
+data/processed/*
+!data/**/.gitkeep
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Saídas
+reports/figures/*
+!reports/figures/.gitkeep
+
+# IDEs
+.idea/

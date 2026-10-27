@@ -1,0 +1,13 @@
+[project]
+name = "social-media-impact"
+version = "0.1.0"
+description = "Análise do impacto das redes sociais na vida de estudantes"
+requires-python = ">=3.12"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.ruff]
+line-length = 100
+src = ["src"]
