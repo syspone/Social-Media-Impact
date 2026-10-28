@@ -36,6 +36,7 @@ reports/figures/     gráficos gerados
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
+pip install -e .          # instala o pacote src/social_media_impact na .venv
 cp .env.example .env
 ```
 
