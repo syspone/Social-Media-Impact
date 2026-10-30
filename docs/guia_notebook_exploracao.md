@@ -22,22 +22,25 @@ no Antigravity, usando Plotly nos gráficos.
 | 3. Visão geral | Estatísticas, contagem das categorias e distribuição das numéricas | `df.describe()`, `value_counts()`, `px.histogram` |
 | 4. Pergunta 1 | Horas de uso × sono, estresse, saúde mental e GPA | `df.corr(method="spearman")`, `px.imshow` |
 | 5. Pergunta 2 | Uso de madrugada × sono | `groupby(...).mean()`, `px.box` |
-| 6. Pergunta 3 | Comparação social × saúde mental (ordem Never → Always) | `px.box` com `category_orders` |
-| 7. Pergunta 4 | % de impacto *Negative* por plataforma | `value_counts(normalize=True)`, `px.bar` |
+| 6. Pergunta 3 | Comparação social × saúde mental (ordem Nunca → Sempre) | `px.box` |
+| 7. Pergunta 4 | % de impacto *Negativo* por plataforma | `value_counts(normalize=True)`, `px.bar` |
 | 8. Conclusões | Escrever o que cada gráfico respondeu | célula Markdown |
 
 Sempre carregue os dados com `load_raw()` (de `social_media_impact.data`), e
 não com `pd.read_csv`. Assim os tipos e as checagens ficam iguais no notebook,
-nos testes e no dashboard.
+nos testes e no dashboard, e os dados já chegam em português: colunas
+em `snake_case` (ex.: `horas_uso_diario`) e valores traduzidos (ex.: *Benéfico*).
+As categorias com ordem natural (nível acadêmico, comparação social e impacto)
+já vêm ordenadas, então os gráficos saem na sequência certa sem `category_orders`.
 
 ## 3. Achados já conhecidos do dataset
 
-- 4.500 linhas e 16 colunas, sem linhas nem `Student_ID` duplicados.
-- Valores ausentes: `Perceived_Stress_Score` (46) e `Academic_Performance_GPA` (85),
+- 4.500 linhas e 16 colunas, sem linhas nem `id_estudante` duplicados.
+- Valores ausentes: `estresse_percebido` (46) e `media_academica` (85),
   menos de 2% das linhas. Sugestão: descartá-los só na análise que usa a coluna
   (`dropna` local).
-- `Overall_Impact` é desbalanceado: 3.681 *Beneficial*, 654 *Neutral* e só
-  165 *Negative* (~3,7%). Na pergunta 4, compare **porcentagens** dentro de cada
+- `impacto_geral` é desbalanceado: 3.681 *Benéfico*, 654 *Neutro* e só
+  165 *Negativo* (~3,7%). Na pergunta 4, compare **porcentagens** dentro de cada
   plataforma, não contagens.
 
 ## 4. Dicas de trabalho

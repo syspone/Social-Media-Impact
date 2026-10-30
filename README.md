@@ -4,20 +4,25 @@ Análise do impacto das redes sociais na vida de estudantes: uso diário, sono, 
 
 ## Dados
 
-`data/raw/Social_media_impact_on_life.csv` — 4.500 estudantes, 16 colunas:
+`data/raw/Social_media_impact_on_life.csv` — 4.500 estudantes, 16 colunas.
 
-| Coluna | Descrição |
-|---|---|
-| Student_ID | Identificador do estudante |
-| Age, Gender, Academic_Level | Perfil |
-| Primary_Platform, Device_Type | Plataforma e aparelho mais usados |
-| Daily_Usage_Hours, Weekend_Extra_Hours | Horas de uso |
-| Sleep_Duration_Hours, Sleep_Quality_Score | Sono |
-| Late_Night_Usage | Usa de madrugada (True/False) |
-| Social_Comparison_Frequency | Frequência de comparação social |
-| Perceived_Stress_Score, Mental_Health_Index | Bem-estar |
-| Academic_Performance_GPA | Desempenho acadêmico |
-| Overall_Impact | Impacto geral (Beneficial / Neutral / ...) |
+O CSV original fica em inglês, como veio da fonte. A função `load_raw()`
+(em `src/social_media_impact/data.py`) traduz os nomes das colunas e os valores,
+com as tabelas de `src/social_media_impact/traducao.py`,
+para português logo na leitura:
+
+| Coluna no projeto | Coluna no CSV | Descrição |
+|---|---|---|
+| id_estudante | Student_ID | Identificador do estudante |
+| idade, genero, nivel_academico | Age, Gender, Academic_Level | Perfil |
+| plataforma_principal, tipo_dispositivo | Primary_Platform, Device_Type | Plataforma e aparelho mais usados |
+| horas_uso_diario, horas_extras_fim_de_semana | Daily_Usage_Hours, Weekend_Extra_Hours | Horas de uso |
+| horas_sono, qualidade_sono | Sleep_Duration_Hours, Sleep_Quality_Score | Sono |
+| uso_madrugada | Late_Night_Usage | Usa de madrugada (True/False) |
+| frequencia_comparacao_social | Social_Comparison_Frequency | Frequência de comparação social (Nunca → Sempre) |
+| estresse_percebido, indice_saude_mental | Perceived_Stress_Score, Mental_Health_Index | Bem-estar |
+| media_academica | Academic_Performance_GPA | Desempenho acadêmico (GPA) |
+| impacto_geral | Overall_Impact | Impacto geral (Negativo / Neutro / Benéfico) |
 
 ## Estrutura
 
