@@ -21,5 +21,8 @@ data/processed/*
 reports/figures/*
 !reports/figures/.gitkeep
 
+# Exemplos para analisar antes de entrar no projeto
+/rascunhos
+
 # IDEs
 .idea/
