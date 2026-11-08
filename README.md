@@ -45,6 +45,19 @@ pip install -e .          # instala o pacote src/social_media_impact na .venv
 cp .env.example .env
 ```
 
+## Como abrir o painel (Dash)
+
+```bash
+python -m social_media_impact.dashboard
+```
+
+Depois abra http://127.0.0.1:8050 no navegador (Ctrl+C no terminal para parar).
+Endereço, porta e modo de desenvolvimento ficam no `.env` (`DASH_HOST`,
+`DASH_PORT`, `DASH_DEBUG`).
+
+Os gráficos ficam em `src/social_media_impact/visualization.py` e são os mesmos
+no notebook e no painel.
+
 ## Como rodar os testes
 
 ```bash

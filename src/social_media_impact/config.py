@@ -22,3 +22,9 @@ RAW_DATA_FILE = PROJECT_ROOT / os.getenv(
 )  # dados originais, nunca editados
 PROCESSED_DATA_DIR = PROJECT_ROOT / os.getenv("DATA_PROCESSED_DIR", "data/processed")
 FIGURES_DIR = PROJECT_ROOT / os.getenv("REPORTS_DIR", "reports/figures")
+
+# Painel em Dash (dashboard.py). DASH_DEBUG=true só em desenvolvimento: recarrega
+# o app ao salvar e mostra os erros no navegador, o que não deve ir para produção
+DASH_HOST = os.getenv("DASH_HOST", "127.0.0.1")
+DASH_PORT = int(os.getenv("DASH_PORT", "8050"))
+DASH_DEBUG = os.getenv("DASH_DEBUG", "false").lower() == "true"
