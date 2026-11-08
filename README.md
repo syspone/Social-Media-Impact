@@ -43,7 +43,7 @@ data/raw/            dados originais (fora do git)
 data/processed/      dados tratados (fora do git)
 notebooks/           exploração em Jupyter
 src/social_media_impact/  código do projeto
-docs/                guias e documentação
+docs/                guias, documentação e imagens do painel (docs/img/)
 tests/               testes (pytest)
 reports/figures/     gráficos gerados
 .github/workflows/   CI: ruff + pytest a cada push e pull request
@@ -71,6 +71,14 @@ Endereço, porta e modo de desenvolvimento ficam no `.env` (`DASH_HOST`,
 
 Os gráficos ficam em `src/social_media_impact/visualization.py` e são os mesmos
 no notebook e no painel.
+
+**Visão geral**: todos os 4.500 estudantes.
+
+![Painel com todos os estudantes: impacto geral e uso diário](docs/img/dashboard_visao_geral.png)
+
+**Com filtro**: TikTok e Instagram, comparação social e horas de sono.
+
+![Painel filtrado por TikTok e Instagram: comparação social e sono](docs/img/dashboard_filtro_plataforma.png)
 
 ## Como rodar os testes
 
