@@ -12,8 +12,11 @@ Análise do impacto das redes sociais na vida de estudantes: uso diário, sono, 
 
 `data/raw/Social_media_impact_on_life.csv` — 4.500 estudantes, 16 colunas.
 
+Fonte: [Impact of Social Media on Life](https://www.kaggle.com/datasets/harishyadav0506/impact-of-social-media-on-life),
+de Harish Yadav, no Kaggle (licença CC0: domínio público).
+
 > O CSV não vai para o repositório (`data/` fica fora do git). Para rodar o
-> projeto, coloque o arquivo em `data/raw/` com esse nome.
+> projeto, baixe o arquivo no link acima e coloque em `data/raw/` com esse nome.
 
 O CSV original fica em inglês, como veio da fonte. A função `load_raw()`
 (em `src/social_media_impact/data.py`) traduz os nomes das colunas e os valores,
