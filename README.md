@@ -1,10 +1,19 @@
 # Social Media Impact
 
+[![CI](https://github.com/syspone/social-media-impact/actions/workflows/ci.yml/badge.svg)](https://github.com/syspone/social-media-impact/actions/workflows/ci.yml)
+![Python](https://img.shields.io/badge/python-3.12%2B-blue)
+![Plotly](https://img.shields.io/badge/gr%C3%A1ficos-Plotly-3F4F75)
+![Dash](https://img.shields.io/badge/painel-Dash-008DE4)
+[![Licença: MIT](https://img.shields.io/badge/licen%C3%A7a-MIT-green)](LICENSE)
+
 Análise do impacto das redes sociais na vida de estudantes: uso diário, sono, estresse, saúde mental e desempenho acadêmico (GPA).
 
 ## Dados
 
 `data/raw/Social_media_impact_on_life.csv` — 4.500 estudantes, 16 colunas.
+
+> O CSV não vai para o repositório (`data/` fica fora do git). Para rodar o
+> projeto, coloque o arquivo em `data/raw/` com esse nome.
 
 O CSV original fica em inglês, como veio da fonte. A função `load_raw()`
 (em `src/social_media_impact/data.py`) traduz os nomes das colunas e os valores,
@@ -31,8 +40,10 @@ data/raw/            dados originais (fora do git)
 data/processed/      dados tratados (fora do git)
 notebooks/           exploração em Jupyter
 src/social_media_impact/  código do projeto
+docs/                guias e documentação
 tests/               testes (pytest)
 reports/figures/     gráficos gerados
+.github/workflows/   CI: ruff + pytest a cada push e pull request
 ```
 
 ## Como instalar
@@ -62,4 +73,12 @@ no notebook e no painel.
 
 ```bash
 pytest
+ruff check .
 ```
+
+Os testes que precisam do CSV original são pulados quando ele não está em
+`data/raw/` (como na CI do GitHub).
+
+## Licença
+
+Distribuído sob a licença MIT. Veja [LICENSE](LICENSE).

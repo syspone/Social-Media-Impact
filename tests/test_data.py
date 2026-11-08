@@ -9,12 +9,14 @@ from social_media_impact.data import (
 )
 
 
+@pytest.mark.requer_dados
 def test_load_raw_tem_todas_as_colunas():
     df = load_raw()
     assert list(df.columns) == COLUMNS
     assert len(df) == 4500
 
 
+@pytest.mark.requer_dados
 def test_load_raw_ajusta_os_tipos():
     df = load_raw()
     for coluna in CATEGORICAL_COLUMNS:
@@ -22,6 +24,7 @@ def test_load_raw_ajusta_os_tipos():
     assert df["uso_madrugada"].dtype == bool
 
 
+@pytest.mark.requer_dados
 def test_load_raw_traduz_os_valores():
     df = load_raw()
     assert set(df["impacto_geral"].cat.categories) == {"Negativo", "Neutro", "Benéfico"}

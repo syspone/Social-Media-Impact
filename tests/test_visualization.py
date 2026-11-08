@@ -12,6 +12,9 @@ from social_media_impact.visualization import (
     resumo_numericas,
 )
 
+# Todos os testes deste arquivo usam o CSV original
+pytestmark = pytest.mark.requer_dados
+
 
 @pytest.fixture(scope="module")
 def df():

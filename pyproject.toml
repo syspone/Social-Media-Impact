@@ -3,10 +3,17 @@ name = "social-media-impact"
 version = "0.1.0"
 description = "Análise do impacto das redes sociais na vida de estudantes"
 requires-python = ">=3.12"
+license = "MIT"
+readme = "README.md"
+authors = [{ name = "Cristian Souza" }]
+
+[project.urls]
+Repository = "https://github.com/syspone/social-media-impact"
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 pythonpath = ["src"]
+markers = ["requer_dados: precisa do CSV original em data/raw (pulado se ele não existir)"]
 
 [tool.ruff]
 line-length = 100
