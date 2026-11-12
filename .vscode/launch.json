@@ -1,0 +1,42 @@
+// =============================================================================
+// Configurações de execução do projeto (painel "Run and Debug" do Antigravity)
+// -----------------------------------------------------------------------------
+// Com "Painel Dash" escolhido, o F5 sobe o painel SEMPRE, não importa qual
+// arquivo esteja aberto (notebook, data.py...). Para parar: Shift+F5.
+// =============================================================================
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            // Nome que aparece na lista do painel "Run and Debug"
+            "name": "Painel Dash",
+
+            // Quem executa: a extensão Python Debugger (debugpy)
+            "type": "debugpy",
+
+            // "launch" = iniciar um programa novo (o outro valor, "attach",
+            // serve para se conectar a um programa que já está rodando)
+            "request": "launch",
+
+            // O mesmo que "python -m social_media_impact.dashboard"
+            "module": "social_media_impact.dashboard",
+
+            // Pasta onde o comando roda: a raiz do projeto
+            "cwd": "${workspaceFolder}",
+
+            // Mostra a saída no terminal de dentro do Antigravity
+            "console": "integratedTerminal",
+
+            // Ao depurar, para só no código do projeto, não dentro do Dash ou do pandas
+            "justMyCode": true,
+
+            // Quando o terminal mostrar "Dash is running on http://...",
+            // abre esse endereço no navegador sozinho
+            "serverReadyAction": {
+                "pattern": "Dash is running on (https?://\\S+)",
+                "uriFormat": "%s",
+                "action": "openExternally"
+            }
+        }
+    ]
+}
